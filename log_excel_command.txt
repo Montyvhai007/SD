@@ -1,1 +1,0 @@
-git log --pretty=format:'"%h","%an","%ce","%ad","%s","%b","%ct",' --date=short > detailed_log.csv
