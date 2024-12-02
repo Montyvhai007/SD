@@ -1,20 +1,27 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
+use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-// routes/web.php
-
-// Fundraiser routes
-Route::get('/signup/fundraiser', [FundraiserController::class, 'showSignup'])->name('signup.fundraiser');
-Route::get('/login/fundraiser', [FundraiserController::class, 'showLogin'])->name('login.fundraiser');
-
-// Donor routes
-Route::get('/signup/donor', [DonorController::class, 'showSignup'])->name('signup.donor');
-Route::get('/login/donor', [DonorController::class, 'showLogin'])->name('login.donor');
-
-// Admin route
-Route::get('/admin', [AdminController::class, 'index'])->name('admin.panel');
-cd
+use Inertia\Inertia;
 
 Route::get('/', function () {
-    return view('welcome');
+    return Inertia::render('Welcome', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
 });
+
+Route::get('/dashboard', function () {
+    return Inertia::render('Dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
