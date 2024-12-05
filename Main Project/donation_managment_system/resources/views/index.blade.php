@@ -8,7 +8,22 @@
 </head>
 <body>
     <div class="needy-background">
+        <div class="donation-animation">
+            <div class="hand">
+                <img src="{{ asset('images/money-bag.png') }}" alt="Hand" class="hand-image">
+            </div>
+            <div class="coin">
+                <img src="{{ asset('images/money.png') }}" alt="Coin" class="coin-image">
+            </div>
+            <div class="box">
+                <img src="{{ asset('images/digital-wallet.png') }}" alt="Donate Box" class="box-image">
+            </div>
+        </div>
         <h1 class="quote">"The smallest act of kindness is worth more than the grandest intention."</h1>
+        <!-- Copyright Notice -->
+        <div class="copyright">
+            &copy; 2024 Your Name. All rights reserved.
+        </div>
     </div>
 
     <script>
