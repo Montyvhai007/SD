@@ -1,0 +1,47 @@
+/* General body styles */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('/images/needy.jpg') no-repeat center center fixed;
+    background-size: cover;
+    cursor: pointer;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.needy-background {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for contrast */
+    border-radius: 10px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.quote {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Hover effect */
+body:hover {
+    background: url('/images/needy.jpg') no-repeat center center fixed;
+    background-size: cover;
+    filter: brightness(0.9);
+}
