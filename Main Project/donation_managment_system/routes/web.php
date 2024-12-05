@@ -2,35 +2,44 @@
 
 use Illuminate\Support\Facades\Route;
 
-// Landing page
+// Landing Page
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');
 
-// Select user page
+// Select User Page
 Route::get('/select-user', function () {
     return view('select_user');
-});
+})->name('select.user');
 
-// Login page
-Route::get('/login', function () {
-    return view('login');
-});
+// Fundraiser Login Page
+Route::get('/fundraiser/login', function () {
+    return 'Fundraiser Login Page';
+})->name('fundraiser.login');
 
-// Signup page
-Route::get('/signup', function () {
-    return view('signup');
-});
+// Fundraiser Signup Page
+Route::get('/fundraiser/signup', function () {
+    return 'Fundraiser Signup Page';
+})->name('fundraiser.signup');
 
-// Forgot password page
+
+// Donor Login Page
+Route::get('/donor/login', function () {
+    return 'Donor Login Page';
+})->name('donor.login');
+
+// Donor Signup Page
+Route::get('/donor/signup', function () {
+    return 'Donor Signup Page';
+})->name('donor.signup');
+
+
+// Forgot Password Page
 Route::get('/forgot-password', function () {
     return view('forgot_password');
-});
+})->name('forgot.password');
 
-Route::get('/', function () {
-    return view('index');
-});
-Route::get('/select-user', function () {
-    return view('select_user');
-});
-
+// Donation List Page
+Route::get('/donation-list', function () {
+    return view('donation_list');
+})->name('donation.list');
