@@ -1,76 +1,104 @@
+/* Body styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
+    background-color: black; /* Set the background to black */
+    color: #fff; /* Ensure text is white for contrast */
     margin: 0;
     padding: 0;
-    text-align: center;
 }
 
 /* Header styling */
 .header {
-    text-align: right;
-    padding: 10px 20px;
-    background: #007bff;
-    color: white;
+    background-color: rgba(76, 175, 80, 0.7); /* Green with transparency */
+    padding: 20px;
+    text-align: center;
 }
 
 .donation-list-link {
     color: white;
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 18px;
 }
 
-.donation-list-link:hover {
-    text-decoration: underline;
-}
-
-/* Page content */
+/* Container for the main content */
 .container {
-    margin-top: 50px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px 0;
+    text-align: center;
 }
 
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 30px;
-    color: #333;
-}
-
-/* Tables styling */
+/* Table layout */
 .tables {
     display: flex;
-    justify-content: center;
-    gap: 50px;
+    justify-content: space-around;
+    margin-top: 30px;
+    transition: all 0.3s ease-in-out; /* Smooth transition */
 }
 
 .table {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 45%;
     padding: 20px;
-    text-align: center;
-    width: 300px;
-}
-
-h2 {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-    color: #007bff;
-}
-
-.btn {
-    display: block;
-    text-decoration: none;
-    background-color: #28a745;
+    border-radius: 8px;
     color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Add transition for smooth resizing */
+}
+
+/* Fundraiser table with unique gradient */
+.fundraiser-table {
+    background: linear-gradient(to bottom, #FF7E5F, #feb47b); /* Gradient from pink to orange */
+}
+
+/* Donor table with unique gradient */
+.donor-table {
+    background: linear-gradient(to bottom, #00c6ff, #0072ff); /* Gradient from light blue to dark blue */
+}
+
+/* Button styles */
+.btn {
+    display: inline-block;
+    background-color: #fff;
+    color: #333;
     padding: 10px 20px;
-    margin: 10px auto;
+    text-decoration: none;
+    margin: 10px 0;
     border-radius: 5px;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
-    text-align: center;
-    width: 80%;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .btn:hover {
-    background-color: #218838;
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .tables {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .table {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Hidden class */
+.hidden {
+    display: none;
+}
+
+/* Enlarged table animation */
+.enlarged {
+    transform: scale(1.2); /* Increase size */
+    opacity: 1 !important; /* Ensure visibility */
+}
+
+/* Hover effect for the table boxes */
+.table:hover {
+    transform: scale(1.1); /* Slight hover effect */
 }

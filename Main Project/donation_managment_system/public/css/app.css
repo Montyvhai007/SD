@@ -1,3 +1,94 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* General Body Styling */
+body {
+    background-color: #111;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container for Auth Forms */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Auth Box Styling */
+.auth-box {
+    background: #222;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.auth-box h2 {
+    margin-bottom: 20px;
+    color: #4CAF50; /* Green header */
+}
+
+/* Input Fields */
+.auth-box input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 2px solid #333;
+    background: #444;
+    color: #fff;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.auth-box input:focus {
+    background: #555;
+    border-color: #4CAF50;
+}
+
+/* Submit Button */
+.auth-box button {
+    width: 100%;
+    padding: 10px;
+    background: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.auth-box button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Links */
+.auth-box a {
+    color: #4CAF50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.auth-box a:hover {
+    color: #fff;
+}
+
+/* Add a cool hover effect on inputs */
+.auth-box input:hover {
+    background-color: #555;
+}
+
+/* Additional media query for mobile responsiveness */
+@media (max-width: 768px) {
+    .auth-box {
+        width: 90%;
+    }
+}
