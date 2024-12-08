@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\FundraiserAuthController;
-use App\Http\Controllers\Auth\DonorAuthController;
+use App\Http\Controllers\FundraiserController;
+use App\Http\Controllers\DonorController;
 
 // Landing Page
 Route::get('/', function () {
@@ -15,17 +15,18 @@ Route::get('/select-user', function () {
 })->name('select.user');
 
 // Fundraiser Routes
-Route::get('/fundraiser/login', [FundraiserAuthController::class, 'showLoginForm'])->name('fundraiser.login');
-Route::get('/fundraiser/signup', [FundraiserAuthController::class, 'showSignupForm'])->name('fundraiser.signup');
+Route::get('/fundraiser/signup', [FundraiserController::class, 'showSignupForm'])->name('fundraiser.signup');
+Route::post('/fundraiser/signup', [FundraiserController::class, 'signup'])->name('fundraiser.signup.post');
+Route::get('/fundraiser/login', [FundraiserController::class, 'showLoginForm'])->name('fundraiser.login');
+Route::post('/fundraiser/login', [FundraiserController::class, 'login'])->name('fundraiser.login.post');
+Route::get('/fundraiser/list', [FundraiserController::class, 'showFundList'])->name('fundraiser.list');
 
 // Donor Routes
-Route::get('/donor/login', [DonorAuthController::class, 'showLoginForm'])->name('donor.login');
-Route::get('/donor/signup', [DonorAuthController::class, 'showSignupForm'])->name('donor.signup');
-
-// Forgot Password
-Route::get('/forgot-password', function () {
-    return view('forgot_password');
-})->name('forgot.password');
+Route::get('/donor/signup', [DonorController::class, 'showSignupForm'])->name('donor.signup');
+Route::post('/donor/signup', [DonorController::class, 'signup'])->name('donor.signup.post');
+Route::get('/donor/login', [DonorController::class, 'showLoginForm'])->name('donor.login');
+Route::post('/donor/login', [DonorController::class, 'login'])->name('donor.login.post');
+Route::get('/donor/donate', [DonorController::class, 'showDonationPage'])->name('donor.donate');
 
 // Donation List Page
 Route::get('/donation-list', function () {
