@@ -22,7 +22,7 @@
         <h1 class="quote">"The smallest act of kindness is worth more than the grandest intention."</h1>
         <!-- Copyright Notice -->
         <div class="copyright">
-            &copy; 2024 Your Name. All rights reserved.
+            &copy; Assad Himel Saiful Rohit
         </div>
     </div>
 
