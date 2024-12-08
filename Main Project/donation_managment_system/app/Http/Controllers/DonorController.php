@@ -6,31 +6,31 @@ use Illuminate\Http\Request;
 
 class DonorController extends Controller
 {
-    // Show the signup form
+    // Show the signup form for donors
     public function showSignupForm()
     {
-        return view('donor.signup');
+        return view('donor.signup'); // Ensure this matches the location of your signup.blade.php
     }
 
-    // Handle the signup logic
+    // Handle donor signup logic
     public function signup(Request $request)
     {
-        // Handle signup logic here
+        // Add your signup logic here, such as validation and user creation
     }
 
-    // Show the login form
+    // Show the login form for donors
     public function showLoginForm()
     {
         return view('donor.login');
     }
 
-    // Handle the login logic
+    // Handle donor login logic
     public function login(Request $request)
     {
-        // Handle login logic here (e.g., authentication)
+        // Add your login logic here
     }
 
-    // Show donation page
+    // Show the donation page
     public function showDonationPage()
     {
         return view('donor.donate');

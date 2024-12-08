@@ -17,5 +17,13 @@
         <br>
         <button type="submit">Login</button>
     </form>
+
+    @if ($errors->any())
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    @endif
 </body>
 </html>
